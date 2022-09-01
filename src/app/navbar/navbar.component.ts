@@ -23,5 +23,8 @@ export class NavbarComponent implements OnInit {
     this.Showsedidebar.emit(this.showhide);
 
   }
+  logout(){
+    
+  }
 
 }

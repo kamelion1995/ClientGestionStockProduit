@@ -7,6 +7,12 @@ import { ProduitComponent } from './produit/produit.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { UpdateproduitComponent } from './updateproduit/updateproduit.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -14,11 +20,18 @@ import { ContentComponent } from './content/content.component';
     ProduitComponent,
     NavbarComponent,
     SidebarComponent,
-    ContentComponent
+    ContentComponent,
+    DashboardComponent,
+    UpdateproduitComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

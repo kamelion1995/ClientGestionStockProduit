@@ -1,6 +1,64 @@
-<ul>
-    <li *ngFor="let produits of produit">
-        ref: {{produits.ref}}, quantite :{{produits.quantite}}, prixUnitaire:{{produits.prixUnitaire}}
+<h3> Produits</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+           <table class="table table-hover">
+              <thead>
+                    <tr>
+                        <th>Reference</th><th>Quantite</th><th>PrixUnitaire</th>
+                        <th> 
+                            <button class="btn btn-outline-primary">ADD</button>
+                        </th>
+                    </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let produits of produit">
+                    <td>{{produits.ref}}</td>
+                    <td>{{produits.quantite}}</td>
+                    <td>{{produits.prixUnitaire}}</td>
 
-    </li>
-</ul>
+                    <td>
+                        <button class="btn btn-outline-primary " (click)="updateproduit(produits.id)">Edit</button>
+                        <button class="btn btn-outline-danger" (click)="deleteProduit(produits.id)">remove</button>
+
+                    </td>
+
+                  </tr>
+
+              </tbody>
+           </table>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                     Ajout Produit
+                </div>
+                <div class="card-body">
+                     <form (ngSubmit)=" addProduit()">
+                        <div class="form-group">
+                             <label>Reference</label>
+                           <input type="text" class="form-control"  [(ngModel)]="produits.ref" name="ref" #ref="ngModel"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantite</label>
+                          <input type="number" class="form-control" [(ngModel)]="produits.quantite" name="quantite" #quantite="ngModel"/>
+                       </div>
+                       <div class="form-group">
+                        <label>Prix Unitaire</label>
+                      <input type="number" class="form-control" [(ngModel)]="produits.prixUnitaire" name="prixUnitaire" #prixUnitaire="ngModel" />
+                   </div>
+                   <button class="btn btn-success" >Ajouetr</button>
+
+                     </form>
+                </div>
+                <div  class="card-footer">
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
